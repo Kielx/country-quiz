@@ -12,3 +12,11 @@ body,
 .App {
   background-image: url("./images/background.png");
 }
+
+.btn {
+  @apply flex gap-5 w-full border-2 border-blue-400 p-3 text-blue-400 items-center rounded-xl cursor-pointer;
+}
+
+.btn-selected {
+  @apply flex gap-5 w-full border-2 bg-yellow-500 border-yellow-500 p-3 text-white items-center rounded-xl cursor-pointer;
+}
