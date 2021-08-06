@@ -1,6 +1,6 @@
 import cardIcon from "../images/undrawAdventure.svg";
 
-const Main = () => {
+const Main = ({ country, options }) => {
   return (
     <main className="Main w-full h-full flex">
       <div className="Card m-auto w-4/6 lg:w-3/6 max-w-md min-h-2/3 bg-white rounded-xl relative">
@@ -15,25 +15,17 @@ const Main = () => {
         ></img>
 
         <h2 className="QuestionText text-2xl text-indigo-800 text-center font-bold pt-10 md:pt-20">
-          Kuala Lumpur is the capital of
+          {country.capital} is the capital of
         </h2>
         <ul className="QuestionList p-8 flex flex-col gap-6">
-          <li className="QuestionListItem btn">
-            <span className="QuestionListItemLetter font-bold text-xl ">A</span>
-            <span className="QuestionListItemText">Vietnam</span>
-          </li>
-          <li className="QuestionListItem btn">
-            <span className="QuestionListItemLetter font-bold text-xl ">B</span>
-            <span className="QuestionListItemText">Malaysia</span>
-          </li>
-          <li className="QuestionListItem btn">
-            <span className="QuestionListItemLetter font-bold text-xl ">C</span>
-            <span className="QuestionListItemText">Sweden</span>
-          </li>
-          <li className="QuestionListItem btn-selected">
-            <span className="QuestionListItemLetter font-bold text-xl ">D</span>
-            <span className="QuestionListItemText">Austria</span>
-          </li>
+          {options.map((option, index) => (
+            <li key={option.capital} className="QuestionListItem btn">
+              <span className="QuestionListItemLetter font-bold text-xl uppercase">
+                {String.fromCharCode(97 + index)}
+              </span>
+              <span className="QuestionListItemText">{option.name}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </main>
