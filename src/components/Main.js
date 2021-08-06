@@ -1,6 +1,14 @@
 import cardIcon from "../images/undrawAdventure.svg";
 
 const Main = ({ country, options }) => {
+  const checkAnswer = (event) => {
+    if (event.target.childNodes[1].innerHTML === country.name) {
+      console.log("true");
+    } else {
+      console.log("false");
+    }
+  };
+
   return (
     <main className="Main w-full h-full flex">
       <div className="Card m-auto w-4/6 lg:w-3/6 max-w-md min-h-2/3 bg-white rounded-xl relative">
@@ -19,11 +27,17 @@ const Main = ({ country, options }) => {
         </h2>
         <ul className="QuestionList p-8 flex flex-col gap-6">
           {options.map((option, index) => (
-            <li key={option.capital} className="QuestionListItem btn">
-              <span className="QuestionListItemLetter font-bold text-xl uppercase">
+            <li
+              key={option.capital}
+              className="QuestionListItem btn"
+              onClick={checkAnswer}
+            >
+              <span className="QuestionListItemLetter font-bold text-xl uppercase pointer-events-none">
                 {String.fromCharCode(97 + index)}
               </span>
-              <span className="QuestionListItemText">{option.name}</span>
+              <span className="QuestionListItemText pointer-events-none">
+                {option.name}
+              </span>
             </li>
           ))}
         </ul>
