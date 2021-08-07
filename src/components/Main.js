@@ -22,7 +22,7 @@ const Main = ({ country, options }) => {
       const arr = [];
 
       while (arr.length < 4) {
-        const randomNumber = Math.floor(Math.random() * 5);
+        const randomNumber = Math.floor(Math.random() * 4);
         if (arr.indexOf(randomNumber) === -1) {
           arr.push(randomNumber);
         }
@@ -48,7 +48,7 @@ const Main = ({ country, options }) => {
       <span
         className={`QuestionListItemLetter font-bold text-xl uppercase pointer-events-none`}
       >
-        {String.fromCharCode(97 + index)}
+        {String.fromCharCode(97 + answerOrder[index])}
       </span>
       <span className="QuestionListItemText pointer-events-none">
         {option.name}
