@@ -15,7 +15,7 @@ body {
 }
 
 .btn {
-  @apply flex gap-5 w-full border-2 border-blue-400 p-3 text-blue-400 items-center rounded-xl cursor-pointer transition-all;
+  @apply flex gap-5 w-full border-2 border-blue-400 p-3 text-blue-400 items-center rounded-xl cursor-pointer transition-all hover:bg-yellow-500 hover:border-yellow-500 hover:text-white;
 }
 
 .btn-selected {
