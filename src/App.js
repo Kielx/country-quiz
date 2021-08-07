@@ -8,6 +8,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [country, setCountry] = useState("");
   const [options, setOptions] = useState([]);
+  const [points, setPoints] = useState(0);
 
   //useEffect to fetch RESTcountries data
   useEffect(() => {
@@ -57,7 +58,13 @@ function App() {
       {loading ? (
         <LoadingSpinner />
       ) : (
-        <Main countries={countries} country={country} options={options} />
+        <Main
+          countries={countries}
+          country={country}
+          options={options}
+          points={points}
+          setPoints={setPoints}
+        />
       )}
 
       <Footer></Footer>

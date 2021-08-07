@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import cardIcon from "../images/undrawAdventure.svg";
 
-const Main = ({ country, options }) => {
+const Main = ({ country, options, points, setPoints }) => {
   const [answered, setAnswered] = useState(false);
-  const [points, setPoints] = useState(0);
   const [answerOrder, setAnswerOrder] = useState([]);
 
   const checkAnswer = (event) => {
@@ -57,7 +56,7 @@ const Main = ({ country, options }) => {
   ));
 
   return (
-    <main className="Main w-full h-full flex">
+    <main className="Main py-20 w-full h-full flex">
       <div className="Card m-auto w-4/6 lg:w-3/6 max-w-md min-h-2/3 bg-white rounded-xl relative">
         <h1 className="CardText max-w-1/2 -top-8 md:-top-12 text-lg sm:text-3xl text-white font-bold uppercase absolute ">
           Country Quiz
@@ -68,11 +67,20 @@ const Main = ({ country, options }) => {
           className="h-auto absolute -top-8 right-0 w-20 md:w-40 md:-top-16"
           alt="A around the globe traveller"
         ></img>
-
+        <span className="absolute top-2 left-2 sm:top-4 sm:left-8 sm:text-2xl  text-indigo-800 text-lg font-bold">
+          {`${points} points`}
+        </span>
         <h2 className="QuestionText text-2xl text-indigo-800 text-center font-bold pt-10 md:pt-20">
           {country.capital} is the capital of
         </h2>
         <ul className="QuestionList p-8 flex flex-col gap-6">{options}</ul>
+        <div className="p-8 pt-0">
+          <button
+            className={`${answered ? "visible" : "invisible"} btn-selected `}
+          >
+            NEXT
+          </button>
+        </div>
       </div>
     </main>
   );
