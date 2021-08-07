@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import cardIcon from "../images/undrawAdventure.svg";
+import hiScore from "../images/undraw_winners.svg";
 
 const Main = ({
   country,
@@ -72,34 +73,69 @@ const Main = ({
         <h1 className="CardText max-w-1/2 -top-8 md:-top-12 text-lg sm:text-3xl text-white font-bold uppercase absolute ">
           Country Quiz
         </h1>
-        <img
-          aria-hidden="true"
-          src={cardIcon}
-          className="h-auto absolute -top-8 right-0 w-20 md:w-40 md:-top-16"
-          alt="A around the globe traveller"
-        ></img>
 
-        <span className="absolute top-2 left-2 sm:top-4 sm:left-8 sm:text-2xl  text-indigo-800 text-lg font-bold">
-          {`${points} points`}
-        </span>
-        <h2 className="QuestionText text-2xl text-indigo-800 text-center font-bold pt-16 mx-4 md:pt-20">
-          {country.capital} is the capital of
-        </h2>
-        <ul
-          className={`QuestionList p-8 flex flex-col gap-6 ${
-            answered ? "pointer-events-none" : "pointer-events-auto"
-          }`}
-        >
-          {options}
-        </ul>
-        <div className="p-8 pt-0">
-          <button
-            className={`${answered ? "visible" : "invisible"} btn-selected `}
-            onClick={() => setAnswered(false)}
-          >
-            NEXT
-          </button>
-        </div>
+        {!incorrect ? (
+          <>
+            <img
+              aria-hidden="true"
+              src={cardIcon}
+              className="h-auto absolute -top-8 right-0 w-20 md:w-40 md:-top-16"
+              alt="A around the globe traveller"
+            ></img>
+            <span className="absolute top-2 left-2 sm:top-4 sm:left-8 sm:text-2xl  text-indigo-800 text-lg font-bold">
+              {`${points} points`}
+            </span>
+            <h2 className="QuestionText text-2xl text-indigo-800 text-center font-bold pt-16 mx-4 md:pt-20">
+              {country.capital} is the capital of
+            </h2>
+            <ul
+              className={`QuestionList p-8 flex flex-col gap-6 ${
+                answered ? "pointer-events-none" : "pointer-events-auto"
+              }`}
+            >
+              {options}
+            </ul>
+            <div className="p-8 pt-0">
+              <button
+                className={`${
+                  answered ? "visible" : "invisible"
+                } btn-selected `}
+                onClick={() => setAnswered(false)}
+              >
+                NEXT
+              </button>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col items-center p-10 gap-3">
+            <img
+              aria-hidden="true"
+              src={hiScore}
+              className="w-1/2"
+              alt="A around the globe traveller"
+            ></img>
+            <h2 className="QuestionText text-3xl text-indigo-800 text-center font-extrabold pt-8  uppercase">
+              Results
+            </h2>
+            <p>
+              You got{" "}
+              <span className="text-3xl text-green-400 font-bold">
+                {points}
+              </span>{" "}
+              correct answers!
+            </p>
+            <button
+              className="mt-10 w-1/2 border-2 border-indigo-800 p-3 text-indigo-800 rounded-xl cursor-pointer transition-all hover:bg-yellow-500 hover:border-yellow-500 hover:text-white"
+              onClick={() => {
+                setIncorrect(false);
+                setAnswered(false);
+                setPoints(0);
+              }}
+            >
+              Try Again
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );
