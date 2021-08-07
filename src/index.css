@@ -22,12 +22,32 @@ body {
   @apply flex gap-5 w-full border-2 bg-yellow-500 border-yellow-500 p-3 text-white justify-center font-extrabold items-center rounded-xl cursor-pointer transition-all;
 }
 
+.correct::after {
+  display: block;
+  content: " ";
+  background-image: url("./images/good.svg");
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+  margin-left: auto;
+}
+
 .correct {
   @apply bg-green-500 border-green-500 font-bold text-white;
 }
 
+.wrong::after {
+  display: block;
+  content: " ";
+  background-image: url("./images/bad.svg");
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+  margin-left: auto;
+}
+
 .wrong {
-  @apply bg-red-500 border-red-500 text-white;
+  @apply bg-red-500 border-red-500 text-white pointer-events-none;
 }
 
 .App {
