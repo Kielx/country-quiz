@@ -64,7 +64,6 @@ function App() {
         <LoadingSpinner />
       ) : (
         <Main
-          countries={countries}
           country={country}
           options={options}
           points={points}
