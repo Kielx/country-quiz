@@ -48,6 +48,7 @@ function App() {
       //Generate options array of 3 random countries + one correct
       while (countries.length > 0 && opt.length < 4) {
         let newCountry = pickRandomCountry();
+        //Check if country already exists in options array
         if (!opt.some((option) => option.name === newCountry.name)) {
           opt.push(newCountry);
         }
