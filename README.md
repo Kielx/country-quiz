@@ -1,7 +1,9 @@
 <!-- Please update value in the {}  -->
 
 <h1 align="center">Country Quiz</h1>
-<img align="center" alt="App screenshot">(https://raw.githubusercontent.com/Kielx/country-quiz/master/screenshots/country-quiz.webp)</img>
+<div align="center">
+<img alt="App screenshot" src="https://raw.githubusercontent.com/Kielx/country-quiz/master/screenshots/country-quiz.webp"></img>
+</div>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
