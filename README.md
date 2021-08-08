@@ -79,6 +79,6 @@ $ npm start
 
 ## Contact
 
-- Website [pantak.com](https://pantak.com)
-- GitHub [Kielx](https://github.com/Kielx)
+- [Website](https://pantak.net)
+- [GitHub](https://github.com/Kielx)
 
