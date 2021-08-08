@@ -117,7 +117,9 @@ const Main = ({
               {`${points} points`}
             </span>
             <h2 className="QuestionText text-2xl text-indigo-800 text-center font-bold pt-16 mx-4 md:pt-20">
-              {country.capital} is the capital of
+              {country.capital
+                ? `${country.capital} is the capital of`
+                : `Country without capital city`}
             </h2>
             <ul
               className={`QuestionList p-8 flex flex-col gap-6 ${
