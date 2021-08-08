@@ -70,7 +70,7 @@ const Main = ({
 
   return (
     <main className="Main py-20 w-full h-full flex">
-      <div className="Card m-auto sm:w-5/6 lg:w-3/6 max-w-md min-h-2/3 bg-white rounded-xl relative">
+      <div className="Card m-auto w-full sm:w-5/6 lg:w-3/6 max-w-md min-h-2/3 bg-white rounded-xl relative">
         <h1 className="CardText max-w-1/2 -top-8 md:-top-12 text-lg sm:text-3xl text-white font-bold uppercase absolute ">
           Country Quiz
         </h1>
