@@ -19,7 +19,7 @@ body {
 }
 
 .btn-selected {
-  @apply flex gap-5 w-full border-2 bg-yellow-500 border-yellow-500 p-3 text-white justify-center font-extrabold items-center rounded-xl cursor-pointer transition-all;
+  @apply flex ml-auto gap-5 w-1/3 border-2 bg-yellow-500 border-yellow-500 p-3 text-white justify-center font-extrabold items-center rounded-xl cursor-pointer transition-all;
 }
 
 .correct::after {

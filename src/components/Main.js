@@ -130,15 +130,13 @@ const Main = ({
             </ul>
             <div className="p-8 pt-0">
               <button
-                className={`${
-                  answered ? "visible" : "invisible"
-                } btn-selected `}
+                className={`${answered ? "visible" : "invisible"} btn-selected`}
                 onClick={() => {
                   setAnswered(false);
                   incorrect ? setClicked(true) : setClicked(false);
                 }}
               >
-                NEXT
+                {incorrect ? "RESULTS" : "NEXT"}
               </button>
             </div>
           </>
