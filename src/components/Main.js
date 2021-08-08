@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import CapitalQuestion from "./CapitalQuestion";
+import FlagQuestion from "./FlagQuestion";
 import Results from "./Results";
 
 const Main = ({
@@ -94,7 +95,7 @@ const Main = ({
           ></Results>
         ) : (
           /* Question part of card */
-          <CapitalQuestion
+          <FlagQuestion
             country={country}
             options={options}
             points={points}
@@ -104,7 +105,7 @@ const Main = ({
             incorrect={incorrect}
             setIncorrect={setIncorrect}
             setClicked={setClicked}
-          ></CapitalQuestion>
+          ></FlagQuestion>
         )}
       </div>
     </main>
