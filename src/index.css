@@ -33,7 +33,7 @@ body {
 }
 
 .correct {
-  @apply bg-green-500 border-green-500 font-bold text-white;
+  @apply bg-green-500 border-green-500 font-bold text-white hover:bg-green-500 hover:border-green-500;
 }
 
 .wrong::after {
@@ -47,7 +47,7 @@ body {
 }
 
 .wrong {
-  @apply bg-red-500 border-red-500 text-white pointer-events-none;
+  @apply bg-red-500 border-red-500 text-white pointer-events-none hover:bg-red-500 hover:border-red-500;
 }
 
 .App {
