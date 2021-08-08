@@ -11,6 +11,7 @@ function App() {
   const [points, setPoints] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [incorrect, setIncorrect] = useState(false);
+  const [questionType, setQuestionType] = useState(0);
 
   //useEffect to fetch RESTcountries data
   useEffect(() => {
@@ -38,6 +39,22 @@ function App() {
           return randomCountry;
         }
       };
+
+      /**
+       * Returns a random integer between min (inclusive) and max (inclusive).
+       * The value is no lower than min (or the next integer greater than min
+       * if min isn't an integer) and no greater than max (or the next integer
+       * lower than max if max isn't an integer).
+       * Using Math.round() will give you a non-uniform distribution!
+       */
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      setQuestionType(getRandomInt(0, 1));
+
       //Pick one random country and set it to country state
       //It will be the country that will be the correct option
       const randomCountry = pickRandomCountry();
@@ -72,6 +89,7 @@ function App() {
           setAnswered={setAnswered}
           incorrect={incorrect}
           setIncorrect={setIncorrect}
+          questionType={questionType}
         />
       )}
 

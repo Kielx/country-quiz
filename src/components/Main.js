@@ -13,6 +13,7 @@ const Main = ({
   setAnswered,
   incorrect,
   setIncorrect,
+  questionType,
 }) => {
   const [answerOrder, setAnswerOrder] = useState([]);
   const [clicked, setClicked] = useState(false);
@@ -93,8 +94,8 @@ const Main = ({
             setClicked={setClicked}
             points={points}
           ></Results>
-        ) : (
-          /* Question part of card */
+        ) : /* Question part of card */
+        questionType === 0 ? (
           <FlagQuestion
             country={country}
             options={options}
@@ -106,6 +107,18 @@ const Main = ({
             setIncorrect={setIncorrect}
             setClicked={setClicked}
           ></FlagQuestion>
+        ) : (
+          <CapitalQuestion
+            country={country}
+            options={options}
+            points={points}
+            setPoints={setPoints}
+            answered={answered}
+            setAnswered={setAnswered}
+            incorrect={incorrect}
+            setIncorrect={setIncorrect}
+            setClicked={setClicked}
+          ></CapitalQuestion>
         )}
       </div>
     </main>
