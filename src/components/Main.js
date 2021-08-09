@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import CapitalQuestion from "./CapitalQuestion";
 import FlagQuestion from "./FlagQuestion";
@@ -15,7 +15,6 @@ const Main = ({
   setIncorrect,
   questionType,
 }) => {
-  const [answerOrder, setAnswerOrder] = useState([]);
   const [clicked, setClicked] = useState(false);
 
   const checkAnswer = (event) => {
@@ -34,28 +33,10 @@ const Main = ({
     setAnswered(true);
   };
 
-  useEffect(() => {
-    function generateRandomNumberArr() {
-      //Generate random number from 0 to 4 and push it to array if it does not contain it
-      //Function is used to generate answer order
-      const arr = [];
-
-      while (arr.length < 4) {
-        const randomNumber = Math.floor(Math.random() * 4);
-        if (arr.indexOf(randomNumber) === -1) {
-          arr.push(randomNumber);
-        }
-      }
-      return arr;
-    }
-
-    setAnswerOrder(generateRandomNumberArr());
-  }, []);
-
   options = options.map((option, index) => (
     <li
       key={option.capital}
-      className={` order-${answerOrder[index]} QuestionListItem btn ${
+      className={`QuestionListItem btn ${
         answered
           ? option.capital === country.capital
             ? "correct pointer-events-none"
@@ -67,7 +48,7 @@ const Main = ({
       <span
         className={`QuestionListItemLetter font-bold text-xl uppercase pointer-events-none`}
       >
-        {String.fromCharCode(97 + answerOrder[index])}
+        {String.fromCharCode(97 + index)}
       </span>
       <span className="QuestionListItemText pointer-events-none">
         {option.name}
