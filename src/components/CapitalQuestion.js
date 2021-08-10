@@ -9,6 +9,7 @@ const CapitalQuestion = ({
   setAnswered,
   incorrect,
   setClicked,
+  setOpenModal,
 }) => {
   return (
     <>
@@ -33,7 +34,13 @@ const CapitalQuestion = ({
       >
         {options}
       </ul>
-      <div className="p-8 pt-0">
+      <div className="p-8 pt-0 flex">
+        <button
+          className={`${answered ? "visible" : "invisible"} btn-learn-more`}
+          onClick={() => setOpenModal(true)}
+        >
+          Learn More
+        </button>
         <button
           className={`${answered ? "visible" : "invisible"} btn-selected`}
           onClick={() => {

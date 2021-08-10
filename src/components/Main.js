@@ -14,6 +14,7 @@ const Main = ({
   incorrect,
   setIncorrect,
   questionType,
+  setOpenModal,
 }) => {
   const [clicked, setClicked] = useState(false);
 
@@ -87,6 +88,7 @@ const Main = ({
             incorrect={incorrect}
             setIncorrect={setIncorrect}
             setClicked={setClicked}
+            setOpenModal={setOpenModal}
           ></FlagQuestion>
         ) : (
           <CapitalQuestion
@@ -99,6 +101,7 @@ const Main = ({
             incorrect={incorrect}
             setIncorrect={setIncorrect}
             setClicked={setClicked}
+            setOpenModal={setOpenModal}
           ></CapitalQuestion>
         )}
       </div>

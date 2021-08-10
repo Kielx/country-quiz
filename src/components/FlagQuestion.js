@@ -9,6 +9,7 @@ const FlagQuestion = ({
   setAnswered,
   incorrect,
   setClicked,
+  setOpenModal,
 }) => {
   return (
     <>
@@ -22,7 +23,11 @@ const FlagQuestion = ({
         {`${points} points`}
       </span>
       <div className="flex flex-col gap-4 items-center pt-16 mx-4 md:pt-20">
-        <img className="w-1/4" src={country.flag} alt="country flag"></img>
+        <img
+          className="w-1/4 border-gray-50 border"
+          src={country.flag}
+          alt="country flag"
+        ></img>
         <h2 className="QuestionText text-2xl text-indigo-800 text-center items-center font-bold ">
           {` Which country does this flag belong to?`}
         </h2>
@@ -34,7 +39,13 @@ const FlagQuestion = ({
       >
         {options}
       </ul>
-      <div className="p-8 pt-0">
+      <div className="p-8 pt-0 flex">
+        <button
+          className={`${answered ? "visible" : "invisible"} btn-learn-more`}
+          onClick={() => setOpenModal(true)}
+        >
+          Learn More
+        </button>
         <button
           className={`${answered ? "visible" : "invisible"} btn-selected`}
           onClick={() => {

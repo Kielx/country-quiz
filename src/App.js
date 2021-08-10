@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
+import CountryDetails from "./components/countryDetails";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -12,13 +13,13 @@ function App() {
   const [answered, setAnswered] = useState(false);
   const [incorrect, setIncorrect] = useState(false);
   const [questionType, setQuestionType] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
 
   //useEffect to fetch RESTcountries data
   useEffect(() => {
     fetch("https://restcountries.eu/rest/v2/all")
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         setCountries(json);
         setLoading(false);
       })
@@ -99,9 +100,15 @@ function App() {
           incorrect={incorrect}
           setIncorrect={setIncorrect}
           questionType={questionType}
+          setOpenModal={setOpenModal}
         />
       )}
-
+      <CountryDetails
+        countries={countries}
+        country={country}
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      ></CountryDetails>
       <Footer></Footer>
     </div>
   );
