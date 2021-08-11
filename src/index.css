@@ -10,12 +10,12 @@ body,
 }
 
 body {
-  background-image: url("./images/background.png");
+  background-image: url("./images/background.webp");
   background-size: cover;
 }
 
 .btn {
-  @apply flex gap-5 w-full border-2 border-blue-400 p-3 text-blue-400 items-center rounded-xl cursor-pointer transition-all hover:bg-yellow-500 hover:border-yellow-500 hover:text-white;
+  @apply flex gap-5 w-full border-2 border-indigo-800 p-3 text-indigo-800 items-center rounded-xl cursor-pointer transition-all hover:bg-yellow-500 hover:border-yellow-500 hover:text-white;
 }
 
 .btn-selected {
