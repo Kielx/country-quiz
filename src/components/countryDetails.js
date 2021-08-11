@@ -21,12 +21,14 @@ const countryDetails = ({ country, countries, openModal, setOpenModal }) => {
       >
         <div class="modal-content flex flex-wrap">
           <img
-            className="w-5/12 border-gray-50 border"
+            className="w-full lg:w-5/12 border-gray-200 border"
             src={country?.flag}
             alt="country flag"
           ></img>
-          <div className="details container w-7/12 pl-8 ">
-            <h2 className="font-extrabold text-3xl pb-3">{country?.name}</h2>
+          <div className="details w-full lg:w-7/12 lg:pl-8 pb-4 flex flex-col gap-2">
+            <h2 className="font-extrabold text-3xl pb-3 pt-6 text-center lg:text-left">
+              {country?.name}
+            </h2>
             <p className="w-full">
               <span className="font-bold">Native Name: </span>
               <span>{country?.nativeName}</span>

@@ -24,7 +24,7 @@ const FlagQuestion = ({
       </span>
       <div className="flex flex-col gap-4 items-center pt-16 mx-4 md:pt-20">
         <img
-          className="w-1/4 border-gray-50 border"
+          className="w-1/4 border-gray-200 border"
           src={country.flag}
           alt="country flag"
         ></img>
