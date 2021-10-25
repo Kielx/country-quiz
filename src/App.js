@@ -17,7 +17,7 @@ function App() {
 
   //useEffect to fetch RESTcountries data
   useEffect(() => {
-    fetch("https://restcountries.eu/rest/v2/all")
+    fetch("https://restcountries.com/v2/all")
       .then((response) => response.json())
       .then((json) => {
         setCountries(json);
